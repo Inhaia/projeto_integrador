@@ -1,0 +1,76 @@
+/*--Página de login--*/
+#body-login{
+    background-color: #385965;
+}
+.login{
+	max-width: 300px;
+	background-color: #eff2f9;
+	margin: auto;
+	padding: 1.5em;
+	margin-top: 100px;
+	border-radius: 4px;
+}
+.logo-login{
+	max-height: 100px;
+	margin: auto;
+	margin-bottom: 5px;
+}
+/*--Menu--*/
+.logo{
+	max-height: 50px;
+}
+.menu{
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.navbar-brand{
+	padding-top: 0px!important;
+}
+.navbar{
+	margin-bottom: 0px!important;
+}
+/*--Conteudo--*/
+.conteudo{
+	padding-top: 20px;
+}
+/*--Formulários--*/
+.formulario{
+	max-width: 600px;
+	padding: 1.5em;
+	background-color: #eff2f9;
+	margin: auto;
+	border-radius: 4px;
+}
+.formulario label{
+	color: #385965;
+}
+.formulario legend{
+	color: #00BBD4;
+	text-align: center;
+}
+.input-group{
+	margin-bottom: 10px;
+}
+.btn-form{
+	background-color: #00BBD4;
+	color: #fff!important;
+	width: 100%;
+}
+.btn-form:hover{
+	background-color: #385965!important;
+}
+.navbar-toggle .icon-bar{
+	background-color: #000;
+}
+.navbar-toggle{
+	border-color: #999999!important;
+}
+/*Ajuda*/
+.ajuda{
+	padding-top: 1em;
+	text-align: center;
+}

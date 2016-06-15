@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<?php
+include('Conecta.php');
+$q_area = odbc_exec($conn,'SELECT * FROM Area');
+while($r_area = odbc_fetch_array($q_area)){
+	$areas[$r_area['codArea']] = $r_area['descricao'];
+}
+
+$q_assunto = odbc_exec($conn,'SELECT * FROM Assunto');
+while($r_assunto = odbc_fetch_array($q_assunto)){
+	$assuntos[$r_assunto['codAssunto']] = $r_assunto['descricao'];
+}
+
+$q_tipo = odbc_exec($conn,'SELECT * FROM TipoQuestao');
+while($r_tipo = odbc_fetch_array($q_tipo)){
+	$tipos[$r_tipo['codTipoQuestao']] = $r_tipo['descricao'];
+}
+?>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link type="text/css" rel="stylesheet" href="CSS/estilos.css"/>
+    </head>
+    <body>
+        
+  <div id="area">  
+      
+    <form id="formulario" method="post" action="funcoes.php" enctype="multipart/form-data">
+        
+        <fieldset>
+        <legend>Formulário Crud</legend>
+        
+        <table>
+            <tr>    
+      <th>Escolha a area da questão</th><br>
+      <td>
+        <select name="area">
+		<option value=''>-- Escolha --</option>
+		<?php
+		foreach($areas as $cod => $descricao){
+			echo "<option value='$cod'>$descricao</option>\n";			
+		}
+		?>
+        </select>
+      </td> 
+  </tr>
+        
+  <tr>
+      <th>Escolha assunto da questão</th><br>
+      <td>
+        <select name="assunto">
+		<option value=''>--Escolha--</option>
+		<?php
+		foreach($assuntos as $cod => $descricao){
+			echo "<option value='$cod'>$descricao</option>\n";			
+		}
+		?>
+        </select>
+      </td>  
+  </tr>
+        
+  <tr>
+      <th>Escolha tipo da questão</th>
+      <td>
+        <select name="tipo">
+        <option value=''>-- Escolha --</option>
+		<?php
+		foreach($tipos as $cod => $descricao){
+			echo "<option value='$cod'>$descricao</option>\n";			
+		}
+		?>
+        </select>
+      </td>    
+  </tr>
+ 
+  <tr>   
+  <th>Questão.</th>
+        <td>
+        <textarea rows="4" cols="50" name="questao">Escreva a questao a ser inserida</textarea>
+        </td>
+      </tr>
+      <tr>
+          <th></th>
+          <td>
+              <!--<button type="button" onclick="alert('Inserido com Sucesso!')">Inserir Questão</button><tr>-->
+		  </td>
+      </tr>  
+      <tr>
+	  
+	   <tr>
+      <th>Dificuldade</th>
+      <td>
+        <select name="dificuldade">
+       <option VALUE="M"> M </option>
+	   <option VALUE="F"> F </option>
+	   <option VALUE="D"> D </option>
+        </select>
+      </td>    
+  </tr>
+	  
+	  
+     <th>Selecione uma imagem</th>
+     <td>
+      </tr>
+      <tr>
+     <th></th>
+     <td><input name="Imagem" type="file"></td>
+	 Insira o Titulo da Imagem <input type="text" name="TituloImagem">
+     <th></th>
+     <td></td>
+   </tr>
+   
+   <tr>               
+    <th>Alternativa</th>
+    <td>
+        A <input type="text" name="alternativa_a">
+		<br>
+		B <input type="text" name="alternativa_b">
+		<br>
+		C <input type="text" name="alternativa_c">
+		<br>
+		D <input type="text" name="alternativa_d">
+		<br>
+		E <input type="text" name="alternativa_e">
+		<br>
+		
+   </tr>  
+    </td>
+  <tr> 
+      <td></td>
+      <td><!--<button type="button" onclick="alert('Adicionado com Sucesso!')">Adicionar alternativas</button>--></td>
+  </tr>
+  <tr>
+	  <td>&nbsp;</td>
+	  <td><input type="submit" name="btnSalvarQuestao" value="Salvar"></td>
+  </tr>
+        </fieldset>
+     </form>  
+  </div>
+        
+        
+    </body>
+</html>

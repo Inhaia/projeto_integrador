@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         
+<form method="post" action= "">
+        
+        
+    <input list="are" name="area"
+           <datalist id="area"
+        <option value="area 1">
+        <option value="area 2">
+        <option value="area 3">    
+    </datalist>
+            
+        <input list="assunto da questao" name="assunto da questao"
+           <datalist id="assunto"
+        <option value="assunto 1">
+        <option value="asunto 2">
+        <option value="assunto 3">    
+    </datalist>
+            
+        <input list="tipo" name="tipo"
+           <datalist id="tipo"
+        <option value="tipo 1">
+        <option value="tipo 2">
+        <option value="tipo 3">    
+    </datalist>
+            
+        <textarea rows="4" cols="50">
+Escreva a questao a ser inserida:
+</textarea>
+        
+                <p><strong>Inserir Imagem:</strong><br>
+                <textarea name="Imagem" rows="1" cols="10"></textarea>
+                <p><input type="enviar" value="Enviar Imagem">
+                
+        
+</form>        
+        
+        
+<?php
+  session_start();
+        include 'funcoes.php';
+        $consulta = odbc_exec($connect,"SELECT idCategoria, nomeCategoria FROM Categoria");
+        include 'menu.php';
+        ?>
+  <form action="questao.php" method="POST" class="formulario" enctype="multipart/form-data">
+                <p><label for="codImagem">Foto:</label>
+                  <input type="file" id="codImagem" name="codImagem" class="p-img"></p>    
+                        
+                    </select>
+                </p>
+
+                <input type="submit" value="Enviar" class="btn-forms" id="submit">
+                <input type="reset" value="Limpar dados" class="btn-forms" id="submit">
+            </form>  
+                
+    </body>
+</html>
